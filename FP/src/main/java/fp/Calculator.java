@@ -1,17 +1,69 @@
 package fp;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.GregorianCalendar;
 
 public class Calculator {
-
+	
+	/*
+	* CONSTANTE PARA DECENAS
+	*/
+	private static final String[] DECENAS = {
+	    "",
+	    "Diez",
+	    "Veinte",
+	    "Treinta",
+	    "Cuarenta",
+	    "Cincuenta",
+	    "Sesenta",
+	    "Setenta",
+	    "Ochenta",
+	    "Noventa"
+	  };
+	
+	/*
+	* CONSTANTE PARA UNIDADES
+	*/
+	 private static final String[] UNIDADES = {
+		    "Cero",
+		    "Uno",
+		    "Dos",
+		    "Tres",
+		    "Cuatro",
+		    "Cinco",
+		    "Seis",
+		    "Siete",
+		    "Ocho",
+		    "Nueve",
+		    "Diez",
+		    "Once", 
+		    "Doce",
+		    "Trece",
+		    "Catorce",
+		    "Quince",
+		    "Dieciseis",
+		    "Diecisiete",
+		    "Dieciocho",
+		    "Diecinueve",
+		    "Veinte",
+		    "Veintiuno",
+		    "Veintidos",
+		    "Veintitres",
+		    "Veinticuatro",
+		    "Veinticinco",
+		    "Veintiseis",
+		    "Veintisiete",
+		    "Veintiocho",
+		    "Veintinueve"
+		  };
 
 	/*
      * este metodo devuelve el Class del object que le pasamos
      */
 	public static Class classTypeOf(Object x) {
-		throw  new NotImplementedException();
+		return x.getClass();
 	}
 
 
