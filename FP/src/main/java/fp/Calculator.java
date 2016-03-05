@@ -114,7 +114,23 @@ public class Calculator {
 	 * divisores que tiene.
 	 */
 	public static int[] divisors(int n) {
-		throw  new NotImplementedException();
+		
+		if (n==0){
+			return null;
+		}
+		
+		List<Integer> resultList = new ArrayList<Integer>();
+		for (int i=20; i>0; i--){
+			if (n%i==0){
+				resultList.add(i);
+			}
+		}
+		
+		int result[] = new int[resultList.size()];
+		for (int i=0;i<resultList.size(); i++){
+			result[i] = resultList.get(i);
+		}
+		return result;
 	}
 
 	/*
