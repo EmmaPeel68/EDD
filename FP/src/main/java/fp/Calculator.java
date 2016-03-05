@@ -166,7 +166,28 @@ public class Calculator {
 	 * mostrar: cincuenta y seis
 	 */
 	public static String speakToMe(int n) {
-		throw  new NotImplementedException();
+		
+		if (n>=0 && n<100){
+			
+			if (n>=0 && n<30){
+				return UNIDADES[n];
+			} else {
+				
+				String text = DECENAS[n/10];
+				
+				
+				if (n%10 != 0){
+					
+					text = text + " y ";
+					text = text + UNIDADES[n%10].toLowerCase(); 
+				} 
+				return text;
+			}
+		} else {
+			
+			return null;
+		}
+		
 	}
 
 	/*
