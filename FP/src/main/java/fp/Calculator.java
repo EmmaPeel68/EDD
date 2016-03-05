@@ -92,8 +92,22 @@ public class Calculator {
 	 * Escribir todos los números del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
-		throw  new NotImplementedException();
+		
+		List<Integer> resultList = new ArrayList<Integer>();
+		
+		
+		while (number > step) {
+			number = number-step;
+			resultList.add(number);
 		}
+		
+		
+		int result[] = new int[resultList.size()];
+		for (int i=0;i<resultList.size(); i++){
+			result[i] = resultList.get(i);
+		}
+		return result;
+	}
 
 	/*
 	 * Módulo al que se le pasa un número entero del 0 al 20 y devuelve los
