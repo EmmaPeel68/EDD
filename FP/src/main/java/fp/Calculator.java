@@ -195,7 +195,17 @@ public class Calculator {
 	 * dd-MM-yyyy
 	 */
 	public static boolean isLeapYear(String fecha) {
-		throw  new NotImplementedException();
+		
+		if (isValidDate(fecha)){
+			
+			int year = Integer.valueOf(fecha.substring(fecha.length()-4, fecha.length()));
+			
+			
+			return ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
+			
+		} else {
+			return false;
+		}
 	}
 
 	/*
