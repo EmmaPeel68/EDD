@@ -71,7 +71,21 @@ public class Calculator {
      * devuelve una lista con los n números de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
-		throw  new NotImplementedException();
+		
+		List<Integer> resultList = new ArrayList<Integer>();
+		
+		
+		int fibo1 = 1;
+		int fibo2 = 1;
+		
+		
+		resultList.add(fibo2);
+		for(int i=2; i<=n;i++){
+			resultList.add(fibo2);
+			fibo2 = fibo1+fibo2;
+			fibo1 = fibo2-fibo1;
+		}
+		return resultList;
 	}
 
 	/*
