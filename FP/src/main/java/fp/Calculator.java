@@ -1,8 +1,10 @@
 package fp;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.GregorianCalendar;
 
 public class Calculator {
@@ -137,8 +139,27 @@ public class Calculator {
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
 	 */
 	public static boolean checkIsPalindrome(String cadena) {
-		throw  new NotImplementedException();
+		
+		if ( cadena == null ){
+			return false;
+		}		
+
+		String cadenaTemp = deAccent(cadena);	
+		cadenaTemp = cadenaTemp.replaceAll("[^a-zA-Z0-9]", "");
+		
+		String cadenaTempRev = new StringBuilder(cadenaTemp).reverse().toString();
+		
+		return cadenaTemp.equalsIgnoreCase(cadenaTempRev);
 	}
+
+	/**
+	 *  @see <a href="http://stackoverflow.com/questions/1008802/converting-symbols-accent-letters-to-english-alphabet"/>
+	 */
+	private static String deAccent(String str) {
+	    String nfdNormalizedString = Normalizer.normalize(str, Normalizer.Form.NFD); 
+	    Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+	    return pattern.matcher(nfdNormalizedString).replaceAll("");
+	}	
 
 	/*
 	 * Pedir un número de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
